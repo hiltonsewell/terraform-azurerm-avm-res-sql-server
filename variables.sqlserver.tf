@@ -16,21 +16,11 @@ variable "administrator_login_password" {
   sensitive   = true
   description = <<DESCRIPTION
   (Optional) The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx).
-  Required unless `generate_administrator_login_password` is `true`, or `azuread_authentication_only` in the `azuread_administrator` block is `true`.
-  If `administrator_login_password` is provided, it takes priority over `generate_administrator_login_password`."
+
+  - If not provided, a random password will be generated automatically
+  - Not required if `azuread_authentication_only` in the `azuread_administrator` block is `true`
   DESCRIPTION
 }
-
-variable "generate_administrator_login_password" {
-  type        = bool
-  default     = false
-  description = <<DESCRIPTION
-  (Optional) Specifies whether a random password should be generated for the `administrator_login` user.
-  Required unless `administrator_login_password` is provided, or `azuread_authentication_only` in the `azuread_administrator` block is `true`.
-  If `administrator_login_password` is specified, it takes priority over `generate_administrator_login_password`.
-  DESCRIPTION
-}
-
 
 variable "administrator_login_password_key_vault_configuration" {
   type = object({

@@ -15,7 +15,7 @@ variable "administrator_login_password" {
   default     = null
   sensitive   = true
   description = <<DESCRIPTION
-  (Optional) The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx).
+  (Optional) The password associated with the `administrator_login` user. Must comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx).
 
   - If not provided, a random password will be generated automatically
   - Not required if `azuread_authentication_only` in the `azuread_administrator` block is `true`

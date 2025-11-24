@@ -14,9 +14,7 @@ variable "administrator_login_password" {
   type        = string
   default     = null
   sensitive   = true
-  description = <<DESCRIPTION
-  (Optional) The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx). Required unless `azuread_authentication_only` in the `azuread_administrator` block is `true`. If not provided, a random password will be generated automatically.
-  DESCRIPTION
+  description = "(Optional) The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx). Required unless `azuread_authentication_only` in the `azuread_administrator` block is `true`. If not provided, a random password will be generated automatically."
 }
 
 variable "administrator_login_password_key_vault_configuration" {
